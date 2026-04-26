@@ -1,0 +1,41 @@
+Pre-training done.  Total: 2.39 h (8595 s)
+
+============================================================
+§4.1  CLASSIFICATION (linear probe)
+============================================================
+  Pre-extracting features for linear probe…
+  [1% labels]  Top-1=64.33%  Macro-F1=63.06%
+  [10% labels]  Top-1=79.89%  Macro-F1=79.20%
+  [100% labels]  Top-1=87.19%  Macro-F1=86.74%
+
+============================================================
+§4.2  SEGMENTATION
+============================================================
+  Seg epoch 10/30
+  Seg epoch 20/30
+  Seg epoch 30/30
+  Segmentation  mIoU=66.57%  Boundary-F1=0.00%
+
+============================================================
+§4.3  RETRIEVAL PERFORMANCE
+============================================================
+  Extracting gallery features…
+  Recall@1 = 74.04%
+  Recall@5 = 92.93%
+  Recall@10 = 96.52%
+  mAP = 34.03%
+
+============================================================
+§4.4  REPRESENTATION QUALITY
+============================================================
+  Extracting features for representation quality…
+  kNN accuracy (k=20) = 81.63%
+  Effective rank = 11.4
+  Uniformity = -0.7590
+  Alignment = 0.2395
+============================================================
+§4.5  BAND MISMATCH ROBUSTNESS  (resumed)
+============================================================
+  Recall@1 (RGB, 3-band) = 74.07%
+  Recall@1 (MS, 13-band) = 58.70%
+  Band mismatch penalty Δ = 15.37%

@@ -1,0 +1,9 @@
+{
+  "model": "SatMAE-ViT-S",
+  "checkpoint": "/kaggle/working/satmae/satmae_ep200.pt",
+  "band": {
+    "recall1_rgb": 74.07,
+    "recall1_ms": 58.7,
+    "band_mismatch_delta": 15.37
+  }
+}

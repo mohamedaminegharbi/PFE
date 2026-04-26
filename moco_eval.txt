@@ -1,0 +1,83 @@
+Pre-training done.  Total: 6.62 h (23841 s)
+
+============================================================
+§4.1  CLASSIFICATION (linear probe)
+============================================================
+  Pre-extracting features for linear probe…
+  [1% labels]  Top-1=49.70%  Macro-F1=48.60%
+  [10% labels]  Top-1=65.37%  Macro-F1=64.24%
+  [100% labels]  Top-1=71.00%  Macro-F1=69.79%
+
+============================================================
+§4.2  SEGMENTATION
+============================================================
+  Seg epoch 10/30
+  Seg epoch 20/30
+  Seg epoch 30/30
+  Segmentation  mIoU=46.77%  Boundary-F1=0.00%
+
+============================================================
+§4.3  RETRIEVAL PERFORMANCE
+============================================================
+  Extracting gallery features…
+  Recall@1 = 58.96%
+  Recall@5 = 85.52%
+  Recall@10 = 92.26%
+  mAP = 26.82%
+
+============================================================
+§4.4  REPRESENTATION QUALITY
+============================================================
+  Extracting features for representation quality…
+  kNN accuracy (k=20) = 67.96%
+  Effective rank = 3.2
+  Uniformity = -1.0102
+  Alignment = 0.5819
+
+============================================================
+§4.5  BAND MISMATCH ROBUSTNESS
+============================================================
+  Recall@1 (RGB, 3-band) = 57.93%
+  Recall@1 (MS, 13-band) = 34.57%
+  Band mismatch penalty Δ = 23.36%
+
+Final results saved to /kaggle/working/mocov3/mocov3_eval_results.json
+{
+  "model": "MoCo-v3-ViT-S",
+  "checkpoint": "/kaggle/working/mocov3/mocov3_ep200.pt",
+  "classification": {
+    "1pct": {
+      "top1_acc": 49.7,
+      "macro_f1": 48.6
+    },
+    "10pct": {
+      "top1_acc": 65.37,
+      "macro_f1": 64.24
+    },
+    "100pct": {
+      "top1_acc": 71.0,
+      "macro_f1": 69.79
+    }
+  },
+  "segmentation": {
+    "miou": 46.77,
+    "boundary_f1": 0.0
+  },
+  "retrieval": {
+    "recall@1": 58.96,
+    "recall@5": 85.52,
+    "recall@10": 92.26,
+    "mAP": 26.82
+  },
+  "representation": {
+    "knn_acc": 67.96,
+    "effective_rank": 3.2,
+    "uniformity": -1.0102,
+    "alignment": 0.5819
+  },
+  "band_mismatch": {
+    "recall1_rgb": 57.93,
+    "recall1_ms": 34.57,
+    "band_mismatch_delta": 23.36
+  }
+}

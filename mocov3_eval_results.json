@@ -1,0 +1,39 @@
+{
+  "model": "MoCo-v3-ViT-S",
+  "checkpoint": "/kaggle/working/mocov3/mocov3_ep200.pt",
+  "classification": {
+    "1pct": {
+      "top1_acc": 49.7,
+      "macro_f1": 48.6
+    },
+    "10pct": {
+      "top1_acc": 65.37,
+      "macro_f1": 64.24
+    },
+    "100pct": {
+      "top1_acc": 71.0,
+      "macro_f1": 69.79
+    }
+  },
+  "segmentation": {
+    "miou": 46.77,
+    "boundary_f1": 0.0
+  },
+  "retrieval": {
+    "recall@1": 58.96,
+    "recall@5": 85.52,
+    "recall@10": 92.26,
+    "mAP": 26.82
+  },
+  "representation": {
+    "knn_acc": 67.96,
+    "effective_rank": 3.2,
+    "uniformity": -1.0102,
+    "alignment": 0.5819
+  },
+  "band_mismatch": {
+    "recall1_rgb": 57.93,
+    "recall1_ms": 34.57,
+    "band_mismatch_delta": 23.36
+  }
+}

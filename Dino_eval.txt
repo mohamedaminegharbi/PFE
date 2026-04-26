@@ -1,0 +1,275 @@
+Pre-training done.  Total: 7.58 h (27291 s)
+
+============================================================
+§4.1  CLASSIFICATION (linear probe)
+============================================================
+  Pre-extracting features for linear probe…
+  [1% labels]  Top-1=51.00%  Macro-F1=50.38%
+  [10% labels]  Top-1=65.81%  Macro-F1=64.63%
+  [100% labels]  Top-1=72.56%  Macro-F1=71.35%
+
+============================================================
+§4.2  SEGMENTATION
+============================================================
+  Seg epoch 10/30
+  Seg epoch 20/30
+  Seg epoch 30/30
+  Segmentation  mIoU=47.68%  Boundary-F1=0.00%
+
+============================================================
+§4.3  RETRIEVAL PERFORMANCE
+============================================================
+  Extracting gallery features…
+  Recall@1 = 59.26%
+  Recall@5 = 85.59%
+  Recall@10 = 92.26%
+  mAP = 26.64%
+
+============================================================
+§4.4  REPRESENTATION QUALITY
+============================================================
+  Extracting features for representation quality…
+  kNN accuracy (k=20) = 69.07%
+  Effective rank = 3.4
+  Uniformity = -0.9154
+  Alignment = 0.5299
+============================================================
+§4.5  BAND MISMATCH ROBUSTNESS
+============================================================
+  Recall@1 (RGB, 3-band) = 59.33%
+  Recall@1 (MS, 13-band) = 40.90%
+  Band mismatch penalty Δ = 18.43%
+
+Final results saved to /kaggle/working/dino/dino_eval_results.json
+{
+  "model": "DINO",
+  "checkpoint": "/kaggle/working/dino/dino_ep200.pt",
+  "classification": {},
+  "segmentation": {},
+  "retrieval": {},
+  "representation": {},
+  "band_mismatch": {
+    "recall1_rgb": 59.33,
+    "recall1_ms": 40.9,
+    "band_mismatch_delta": 18.43
+  }
+}
+
+Notebook detected — DDP disabled. Running single-GPU on cuda:0. (2 GPUs available but only 1 will be used.)
+Device: cuda:0  |  World: 1  |  Workers: 4  |  compile: True  |  AMP: torch.float16
+Caching 30399 images in RAM…
+/tmp/ipykernel_441/3009048983.py:224: UserWarning: Argument(s) 'threshold' are not valid for transform Solarize
+  ops.append(A.Solarize(threshold=128, p=solarize_prob))
+  5000/30399 cached
+  10000/30399 cached
+  15000/30399 cached
+  20000/30399 cached
+  25000/30399 cached
+  30000/30399 cached
+Cache complete.
+torch.compile enabled on student + teacher backbone.
+W0417 09:53:36.410000 441 torch/_inductor/utils.py:1679] [0/0] Not enough SMs to use max_autotune_gemm mode
+Epoch [  1/200]  loss=9.0098  lr=2.00e-04  t_temp=0.0700  time=222s
+Epoch [  2/200]  loss=9.0061  lr=4.00e-04  t_temp=0.0701  time=140s
+Epoch [  3/200]  loss=8.9753  lr=6.00e-04  t_temp=0.0702  time=138s
+Epoch [  4/200]  loss=8.9074  lr=8.00e-04  t_temp=0.0705  time=137s
+Epoch [  5/200]  loss=8.8585  lr=1.00e-03  t_temp=0.0709  time=137s
+Epoch [  6/200]  loss=8.8370  lr=1.20e-03  t_temp=0.0713  time=137s
+Epoch [  7/200]  loss=8.8287  lr=1.40e-03  t_temp=0.0719  time=136s
+Epoch [  8/200]  loss=8.8257  lr=1.60e-03  t_temp=0.0726  time=137s
+Epoch [  9/200]  loss=8.8249  lr=1.80e-03  t_temp=0.0733  time=136s
+Epoch [ 10/200]  loss=8.8250  lr=2.00e-03  t_temp=0.0741  time=136s
+Epoch [ 11/200]  loss=8.8257  lr=2.00e-03  t_temp=0.0750  time=135s
+Epoch [ 12/200]  loss=8.8266  lr=2.00e-03  t_temp=0.0759  time=136s
+Epoch [ 13/200]  loss=8.8277  lr=2.00e-03  t_temp=0.0769  time=135s
+Epoch [ 14/200]  loss=8.8289  lr=2.00e-03  t_temp=0.0779  time=136s
+Epoch [ 15/200]  loss=8.8302  lr=2.00e-03  t_temp=0.0790  time=136s
+Epoch [ 16/200]  loss=8.8314  lr=2.00e-03  t_temp=0.0800  time=136s
+Epoch [ 17/200]  loss=8.8327  lr=2.00e-03  t_temp=0.0810  time=136s
+Epoch [ 18/200]  loss=8.8341  lr=1.99e-03  t_temp=0.0821  time=136s
+Epoch [ 19/200]  loss=8.8353  lr=1.99e-03  t_temp=0.0831  time=136s
+Epoch [ 20/200]  loss=8.8366  lr=1.99e-03  t_temp=0.0841  time=135s
+Epoch [ 21/200]  loss=8.8378  lr=1.99e-03  t_temp=0.0850  time=136s
+Epoch [ 22/200]  loss=8.8389  lr=1.98e-03  t_temp=0.0859  time=135s
+Epoch [ 23/200]  loss=8.8399  lr=1.98e-03  t_temp=0.0867  time=135s
+Epoch [ 24/200]  loss=8.8408  lr=1.98e-03  t_temp=0.0874  time=136s
+Epoch [ 25/200]  loss=8.8416  lr=1.97e-03  t_temp=0.0881  time=135s
+Epoch [ 26/200]  loss=8.8423  lr=1.97e-03  t_temp=0.0887  time=136s
+Epoch [ 27/200]  loss=8.8429  lr=1.97e-03  t_temp=0.0891  time=135s
+Epoch [ 28/200]  loss=8.8434  lr=1.96e-03  t_temp=0.0895  time=136s
+Epoch [ 29/200]  loss=8.8437  lr=1.96e-03  t_temp=0.0898  time=135s
+Epoch [ 30/200]  loss=8.8439  lr=1.95e-03  t_temp=0.0899  time=136s
+Epoch [ 31/200]  loss=8.8440  lr=1.95e-03  t_temp=0.0900  time=136s
+Epoch [ 32/200]  loss=8.8440  lr=1.94e-03  t_temp=0.0900  time=136s
+Epoch [ 33/200]  loss=8.8440  lr=1.93e-03  t_temp=0.0900  time=136s
+Epoch [ 34/200]  loss=8.8440  lr=1.93e-03  t_temp=0.0900  time=136s
+Epoch [ 35/200]  loss=8.8440  lr=1.92e-03  t_temp=0.0900  time=136s
+Epoch [ 36/200]  loss=8.8440  lr=1.92e-03  t_temp=0.0900  time=136s
+Epoch [ 37/200]  loss=8.8440  lr=1.91e-03  t_temp=0.0900  time=136s
+Epoch [ 38/200]  loss=8.8440  lr=1.90e-03  t_temp=0.0900  time=136s
+Epoch [ 39/200]  loss=8.8440  lr=1.89e-03  t_temp=0.0900  time=136s
+Epoch [ 40/200]  loss=8.8440  lr=1.89e-03  t_temp=0.0900  time=136s
+Epoch [ 41/200]  loss=8.8440  lr=1.88e-03  t_temp=0.0900  time=136s
+Epoch [ 42/200]  loss=8.8440  lr=1.87e-03  t_temp=0.0900  time=136s
+Epoch [ 43/200]  loss=8.8440  lr=1.86e-03  t_temp=0.0900  time=135s
+Epoch [ 44/200]  loss=8.8440  lr=1.85e-03  t_temp=0.0900  time=136s
+Epoch [ 45/200]  loss=8.8440  lr=1.85e-03  t_temp=0.0900  time=136s
+Epoch [ 46/200]  loss=8.8440  lr=1.84e-03  t_temp=0.0900  time=136s
+Epoch [ 47/200]  loss=8.8440  lr=1.83e-03  t_temp=0.0900  time=136s
+Epoch [ 48/200]  loss=8.8440  lr=1.82e-03  t_temp=0.0900  time=136s
+Epoch [ 49/200]  loss=8.8440  lr=1.81e-03  t_temp=0.0900  time=136s
+Epoch [ 50/200]  loss=8.8440  lr=1.80e-03  t_temp=0.0900  time=136s
+  → Saved /kaggle/working/dino/dino_ep50.pt
+Epoch [ 51/200]  loss=8.8440  lr=1.79e-03  t_temp=0.0900  time=135s
+Epoch [ 52/200]  loss=8.8440  lr=1.78e-03  t_temp=0.0900  time=136s
+Epoch [ 53/200]  loss=8.8440  lr=1.77e-03  t_temp=0.0900  time=136s
+Epoch [ 54/200]  loss=8.8440  lr=1.76e-03  t_temp=0.0900  time=136s
+Epoch [ 55/200]  loss=8.8440  lr=1.75e-03  t_temp=0.0900  time=136s
+Epoch [ 56/200]  loss=8.8440  lr=1.74e-03  t_temp=0.0900  time=136s
+Epoch [ 57/200]  loss=8.8440  lr=1.72e-03  t_temp=0.0900  time=135s
+Epoch [ 58/200]  loss=8.8440  lr=1.71e-03  t_temp=0.0900  time=135s
+Epoch [ 59/200]  loss=8.8440  lr=1.70e-03  t_temp=0.0900  time=136s
+Epoch [ 60/200]  loss=8.8440  lr=1.69e-03  t_temp=0.0900  time=136s
+Epoch [ 61/200]  loss=8.8440  lr=1.68e-03  t_temp=0.0900  time=136s
+Epoch [ 62/200]  loss=8.8440  lr=1.67e-03  t_temp=0.0900  time=136s
+Epoch [ 63/200]  loss=8.8440  lr=1.65e-03  t_temp=0.0900  time=136s
+Epoch [ 64/200]  loss=8.8440  lr=1.64e-03  t_temp=0.0900  time=136s
+Epoch [ 65/200]  loss=8.8440  lr=1.63e-03  t_temp=0.0900  time=136s
+Epoch [ 66/200]  loss=8.8440  lr=1.61e-03  t_temp=0.0900  time=136s
+Epoch [ 67/200]  loss=8.8440  lr=1.60e-03  t_temp=0.0900  time=136s
+Epoch [ 68/200]  loss=8.8440  lr=1.59e-03  t_temp=0.0900  time=136s
+Epoch [ 69/200]  loss=8.8440  lr=1.57e-03  t_temp=0.0900  time=136s
+Epoch [ 70/200]  loss=8.8440  lr=1.56e-03  t_temp=0.0900  time=137s
+Epoch [ 71/200]  loss=8.8440  lr=1.55e-03  t_temp=0.0900  time=136s
+Epoch [ 72/200]  loss=8.8440  lr=1.53e-03  t_temp=0.0900  time=136s
+Epoch [ 73/200]  loss=8.8440  lr=1.52e-03  t_temp=0.0900  time=137s
+Epoch [ 74/200]  loss=8.8440  lr=1.51e-03  t_temp=0.0900  time=136s
+Epoch [ 75/200]  loss=8.8440  lr=1.49e-03  t_temp=0.0900  time=136s
+Epoch [ 76/200]  loss=8.8440  lr=1.48e-03  t_temp=0.0900  time=137s
+Epoch [ 77/200]  loss=8.8440  lr=1.46e-03  t_temp=0.0900  time=137s
+Epoch [ 78/200]  loss=8.8440  lr=1.45e-03  t_temp=0.0900  time=137s
+Epoch [ 79/200]  loss=8.8440  lr=1.43e-03  t_temp=0.0900  time=137s
+Epoch [ 80/200]  loss=8.8440  lr=1.42e-03  t_temp=0.0900  time=136s
+Epoch [ 81/200]  loss=8.8440  lr=1.40e-03  t_temp=0.0900  time=136s
+Epoch [ 82/200]  loss=8.8440  lr=1.39e-03  t_temp=0.0900  time=137s
+Epoch [ 83/200]  loss=8.8440  lr=1.37e-03  t_temp=0.0900  time=136s
+Epoch [ 84/200]  loss=8.8440  lr=1.36e-03  t_temp=0.0900  time=137s
+Epoch [ 85/200]  loss=8.8440  lr=1.34e-03  t_temp=0.0900  time=136s
+Epoch [ 86/200]  loss=8.8440  lr=1.33e-03  t_temp=0.0900  time=136s
+Epoch [ 87/200]  loss=8.8440  lr=1.31e-03  t_temp=0.0900  time=136s
+Epoch [ 88/200]  loss=8.8440  lr=1.29e-03  t_temp=0.0900  time=137s
+Epoch [ 89/200]  loss=8.8440  lr=1.28e-03  t_temp=0.0900  time=137s
+Epoch [ 90/200]  loss=8.8440  lr=1.26e-03  t_temp=0.0900  time=137s
+Epoch [ 91/200]  loss=8.8440  lr=1.25e-03  t_temp=0.0900  time=136s
+Epoch [ 92/200]  loss=8.8440  lr=1.23e-03  t_temp=0.0900  time=137s
+Epoch [ 93/200]  loss=8.8440  lr=1.21e-03  t_temp=0.0900  time=136s
+Epoch [ 94/200]  loss=8.8440  lr=1.20e-03  t_temp=0.0900  time=137s
+Epoch [ 95/200]  loss=8.8440  lr=1.18e-03  t_temp=0.0900  time=136s
+Epoch [ 96/200]  loss=8.8440  lr=1.17e-03  t_temp=0.0900  time=137s
+Epoch [ 97/200]  loss=8.8440  lr=1.15e-03  t_temp=0.0900  time=137s
+Epoch [ 98/200]  loss=8.8440  lr=1.13e-03  t_temp=0.0900  time=137s
+Epoch [ 99/200]  loss=8.8440  lr=1.12e-03  t_temp=0.0900  time=136s
+Epoch [100/200]  loss=8.8440  lr=1.10e-03  t_temp=0.0900  time=137s
+  → Saved /kaggle/working/dino/dino_ep100.pt
+Epoch [101/200]  loss=8.8440  lr=1.08e-03  t_temp=0.0900  time=137s
+Epoch [102/200]  loss=8.8440  lr=1.07e-03  t_temp=0.0900  time=137s
+Epoch [103/200]  loss=8.8440  lr=1.05e-03  t_temp=0.0900  time=137s
+Epoch [104/200]  loss=8.8440  lr=1.03e-03  t_temp=0.0900  time=137s
+Epoch [105/200]  loss=8.8440  lr=1.02e-03  t_temp=0.0900  time=137s
+Epoch [106/200]  loss=8.8440  lr=1.00e-03  t_temp=0.0900  time=137s
+Epoch [107/200]  loss=8.8440  lr=9.84e-04  t_temp=0.0900  time=137s
+Epoch [108/200]  loss=8.8440  lr=9.67e-04  t_temp=0.0900  time=137s
+Epoch [109/200]  loss=8.8440  lr=9.51e-04  t_temp=0.0900  time=137s
+Epoch [110/200]  loss=8.8440  lr=9.34e-04  t_temp=0.0900  time=137s
+Epoch [111/200]  loss=8.8440  lr=9.18e-04  t_temp=0.0900  time=137s
+Epoch [112/200]  loss=8.8440  lr=9.02e-04  t_temp=0.0900  time=137s
+Epoch [113/200]  loss=8.8440  lr=8.85e-04  t_temp=0.0900  time=137s
+Epoch [114/200]  loss=8.8440  lr=8.69e-04  t_temp=0.0900  time=137s
+Epoch [115/200]  loss=8.8440  lr=8.52e-04  t_temp=0.0900  time=137s
+Epoch [116/200]  loss=8.8440  lr=8.36e-04  t_temp=0.0900  time=137s
+Epoch [117/200]  loss=8.8440  lr=8.20e-04  t_temp=0.0900  time=137s
+Epoch [118/200]  loss=8.8440  lr=8.03e-04  t_temp=0.0900  time=137s
+Epoch [119/200]  loss=8.8440  lr=7.87e-04  t_temp=0.0900  time=137s
+Epoch [120/200]  loss=8.8440  lr=7.71e-04  t_temp=0.0900  time=137s
+Epoch [121/200]  loss=8.8440  lr=7.55e-04  t_temp=0.0900  time=137s
+Epoch [122/200]  loss=8.8440  lr=7.39e-04  t_temp=0.0900  time=137s
+Epoch [123/200]  loss=8.8440  lr=7.23e-04  t_temp=0.0900  time=137s
+Epoch [124/200]  loss=8.8440  lr=7.07e-04  t_temp=0.0900  time=137s
+Epoch [125/200]  loss=8.8440  lr=6.92e-04  t_temp=0.0900  time=137s
+Epoch [126/200]  loss=8.8440  lr=6.76e-04  t_temp=0.0900  time=137s
+Epoch [127/200]  loss=8.8440  lr=6.60e-04  t_temp=0.0900  time=137s
+Epoch [128/200]  loss=8.8440  lr=6.45e-04  t_temp=0.0900  time=137s
+Epoch [129/200]  loss=8.8440  lr=6.29e-04  t_temp=0.0900  time=138s
+Epoch [130/200]  loss=8.8440  lr=6.14e-04  t_temp=0.0900  time=137s
+Epoch [131/200]  loss=8.8440  lr=5.99e-04  t_temp=0.0900  time=138s
+Epoch [132/200]  loss=8.8440  lr=5.84e-04  t_temp=0.0900  time=138s
+Epoch [133/200]  loss=8.8440  lr=5.69e-04  t_temp=0.0900  time=137s
+Epoch [134/200]  loss=8.8440  lr=5.54e-04  t_temp=0.0900  time=137s
+Epoch [135/200]  loss=8.8440  lr=5.39e-04  t_temp=0.0900  time=137s
+Epoch [136/200]  loss=8.8440  lr=5.25e-04  t_temp=0.0900  time=137s
+Epoch [137/200]  loss=8.8440  lr=5.10e-04  t_temp=0.0900  time=137s
+Epoch [138/200]  loss=8.8440  lr=4.96e-04  t_temp=0.0900  time=137s
+Epoch [139/200]  loss=8.8440  lr=4.82e-04  t_temp=0.0900  time=137s
+Epoch [140/200]  loss=8.8440  lr=4.68e-04  t_temp=0.0900  time=138s
+Epoch [141/200]  loss=8.8440  lr=4.54e-04  t_temp=0.0900  time=137s
+Epoch [142/200]  loss=8.8440  lr=4.40e-04  t_temp=0.0900  time=137s
+Epoch [143/200]  loss=8.8440  lr=4.26e-04  t_temp=0.0900  time=137s
+Epoch [144/200]  loss=8.8440  lr=4.13e-04  t_temp=0.0900  time=137s
+Epoch [145/200]  loss=8.8440  lr=4.00e-04  t_temp=0.0900  time=137s
+Epoch [146/200]  loss=8.8440  lr=3.87e-04  t_temp=0.0900  time=137s
+Epoch [147/200]  loss=8.8440  lr=3.74e-04  t_temp=0.0900  time=137s
+Epoch [148/200]  loss=8.8440  lr=3.61e-04  t_temp=0.0900  time=137s
+Epoch [149/200]  loss=8.8440  lr=3.48e-04  t_temp=0.0900  time=137s
+Epoch [150/200]  loss=8.8440  lr=3.36e-04  t_temp=0.0900  time=137s
+  → Saved /kaggle/working/dino/dino_ep150.pt
+Epoch [151/200]  loss=8.8440  lr=3.24e-04  t_temp=0.0900  time=138s
+Epoch [152/200]  loss=8.8440  lr=3.11e-04  t_temp=0.0900  time=137s
+Epoch [153/200]  loss=8.8440  lr=3.00e-04  t_temp=0.0900  time=137s
+Epoch [154/200]  loss=8.8440  lr=2.88e-04  t_temp=0.0900  time=137s
+Epoch [155/200]  loss=8.8440  lr=2.76e-04  t_temp=0.0900  time=137s
+Epoch [156/200]  loss=8.8440  lr=2.65e-04  t_temp=0.0900  time=137s
+Epoch [157/200]  loss=8.8440  lr=2.54e-04  t_temp=0.0900  time=138s
+Epoch [158/200]  loss=8.8440  lr=2.43e-04  t_temp=0.0900  time=137s
+Epoch [159/200]  loss=8.8440  lr=2.32e-04  t_temp=0.0900  time=137s
+Epoch [160/200]  loss=8.8440  lr=2.22e-04  t_temp=0.0900  time=137s
+Epoch [161/200]  loss=8.8440  lr=2.12e-04  t_temp=0.0900  time=137s
+Epoch [162/200]  loss=8.8440  lr=2.02e-04  t_temp=0.0900  time=137s
+Epoch [163/200]  loss=8.8440  lr=1.92e-04  t_temp=0.0900  time=136s
+Epoch [164/200]  loss=8.8440  lr=1.82e-04  t_temp=0.0900  time=134s
+Epoch [165/200]  loss=8.8440  lr=1.73e-04  t_temp=0.0900  time=134s
+Epoch [166/200]  loss=8.8440  lr=1.64e-04  t_temp=0.0900  time=133s
+Epoch [167/200]  loss=8.8440  lr=1.55e-04  t_temp=0.0900  time=133s
+Epoch [168/200]  loss=8.8440  lr=1.46e-04  t_temp=0.0900  time=133s
+Epoch [169/200]  loss=8.8440  lr=1.38e-04  t_temp=0.0900  time=133s
+Epoch [170/200]  loss=8.8440  lr=1.29e-04  t_temp=0.0900  time=134s
+Epoch [171/200]  loss=8.8440  lr=1.21e-04  t_temp=0.0900  time=133s
+Epoch [172/200]  loss=8.8440  lr=1.14e-04  t_temp=0.0900  time=134s
+Epoch [173/200]  loss=8.8440  lr=1.06e-04  t_temp=0.0900  time=133s
+Epoch [174/200]  loss=8.8440  lr=9.90e-05  t_temp=0.0900  time=134s
+Epoch [175/200]  loss=8.8440  lr=9.19e-05  t_temp=0.0900  time=133s
+Epoch [176/200]  loss=8.8440  lr=8.52e-05  t_temp=0.0900  time=133s
+Epoch [177/200]  loss=8.8440  lr=7.87e-05  t_temp=0.0900  time=134s
+Epoch [178/200]  loss=8.8440  lr=7.24e-05  t_temp=0.0900  time=133s
+Epoch [179/200]  loss=8.8440  lr=6.64e-05  t_temp=0.0900  time=134s
+Epoch [180/200]  loss=8.8440  lr=6.07e-05  t_temp=0.0900  time=133s
+Epoch [181/200]  loss=8.8440  lr=5.52e-05  t_temp=0.0900  time=133s
+Epoch [182/200]  loss=8.8440  lr=4.99e-05  t_temp=0.0900  time=134s
+Epoch [183/200]  loss=8.8440  lr=4.49e-05  t_temp=0.0900  time=133s
+Epoch [184/200]  loss=8.8440  lr=4.02e-05  t_temp=0.0900  time=134s
+Epoch [185/200]  loss=8.8440  lr=3.58e-05  t_temp=0.0900  time=134s
+Epoch [186/200]  loss=8.8439  lr=3.16e-05  t_temp=0.0900  time=134s
+Epoch [187/200]  loss=8.8439  lr=2.77e-05  t_temp=0.0900  time=134s
+Epoch [188/200]  loss=8.8439  lr=2.40e-05  t_temp=0.0900  time=134s
+Epoch [189/200]  loss=8.8439  lr=2.06e-05  t_temp=0.0900  time=135s
+Epoch [190/200]  loss=8.8439  lr=1.75e-05  t_temp=0.0900  time=135s
+Epoch [191/200]  loss=8.8439  lr=1.46e-05  t_temp=0.0900  time=135s
+Epoch [192/200]  loss=8.8439  lr=1.20e-05  t_temp=0.0900  time=134s
+Epoch [193/200]  loss=8.8439  lr=9.73e-06  t_temp=0.0900  time=134s
+Epoch [194/200]  loss=8.8439  lr=7.69e-06  t_temp=0.0900  time=135s
+Epoch [195/200]  loss=8.8439  lr=5.91e-06  t_temp=0.0900  time=135s
+Epoch [196/200]  loss=8.8439  lr=4.41e-06  t_temp=0.0900  time=134s
+Epoch [197/200]  loss=8.8439  lr=3.19e-06  t_temp=0.0900  time=135s
+Epoch [198/200]  loss=8.8439  lr=2.23e-06  t_temp=0.0900  time=134s
+Epoch [199/200]  loss=8.8439  lr=1.55e-06  t_temp=0.0900  time=135s
+Epoch [200/200]  loss=8.8439  lr=1.14e-06  t_temp=0.0900  time=134s
+  → Saved /kaggle/working/dino/dino_ep200.pt
